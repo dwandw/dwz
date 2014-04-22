@@ -3,13 +3,13 @@
  */
 (function($){
     var _op = {
-        cursor: 'move', // selector 的鼠标手势
-        sortBoxs: 'div.sortDrag', //拖动排序项父容器
-        replace: false, //2个sortBox之间拖动替换
-        items: '> *', //拖动排序项选择器
-        selector: '', //拖动排序项用于拖动的子元素的选择器，为空时等于item
+        cursor: 'move',
+        sortBoxs: 'div.sortDrag',
+        replace: false,
+        items: '> *',
+        selector: '',
         zIndex: 1000
-    };
+    }; // selector 的鼠标手势 //拖动排序项父容器 //2个sortBox之间拖动替换 //拖动排序项选择器 //拖动排序项用于拖动的子元素的选择器，为空时等于item
     var sortDrag = {
         start:function($sortBox, $item, event, op){
             var $placeholder = this._createPlaceholder($item);

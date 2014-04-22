@@ -144,8 +144,9 @@
                     var $this;
                     $(">div>div:first,>div>a", node).click(function() {
                         $this = $(this);
-                        if (!tree.children().length && $this.attr("src")) {
-                            $.post($this.attr("src"), {}, function(html) {
+                        if (!tree.children().length) {
+                            url = $this.attr("src") || $(">div>a", node).attr("src");
+                            $.post(url, {}, function(html) {
                                 var json = DWZ.jsonEval(html);
                                 if (json.statusCode) {
                                     DWZ.ajaxDone(json);
